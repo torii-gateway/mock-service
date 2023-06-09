@@ -1,0 +1,20 @@
+#standard config for h2
+spring:
+  datasource:
+    url: jdbc:h2:file:./h2/mockdb;AUTO_SERVER=TRUE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        show_sql: true
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
