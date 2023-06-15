@@ -26,6 +26,13 @@ public class ContentController {
     @GetMapping
     @ResponseBody
     public ResponseEntity<List<Content>> getAllContent() {
+        //delay of 3 seconds
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return ResponseEntity.ok(contentService.getAllContent());
     }
 
